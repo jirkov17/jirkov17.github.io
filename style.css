@@ -1,43 +1,174 @@
+/* Основные стили */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
     color: #333;
+    line-height: 1.6;
 }
 
-header {
+/* Левая колонка (статичная) */
+.sidebar {
+    width: 300px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: 30px;
 }
 
-h1 {
-    color: #2c3e50;
+.photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #3498db;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.subtitle {
-    color: #7f8c8d;
+.sidebar h1 {
+    color: white;
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+}
+
+.sidebar h2 {
+    color: #ecf0f1;
+    font-size: 1.1em;
     font-weight: normal;
+    margin: 0 0 30px 0;
+}
+
+.contact-info {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.contact-info i {
+    margin-right: 12px;
+    color: #3498db;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Правая колонка (прокручиваемая) */
+.main-content {
+    margin-left: 300px;
+    padding: 50px;
+    flex: 1;
+    max-width: 800px;
+    background-color: #f9f9f9;
 }
 
 section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-h2 {
+h3 {
+    color: #2c3e50;
     border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
-    color: #2980b9;
+    padding-bottom: 8px;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+.education-item, .course-item {
+    margin-bottom: 25px;
+}
+
+.date {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.9em;
+    display: block;
+    margin: 5px 0;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    padding-left: 20px;
+    margin: 10px 0;
 }
 
 li {
     margin-bottom: 8px;
+    position: relative;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-category {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.skill-category h4 {
+    margin-top: 0;
+    color: #3498db;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 250px;
+        padding: 30px 20px;
+    }
+    .main-content {
+        margin-left: 250px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 25px;
+    }
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Дополнительные улучшения */
+strong {
+    color: #2c3e50;
 }
 
 a {
@@ -49,26 +180,16 @@ a:hover {
     text-decoration: underline;
 }
 
-.item {
-    margin-bottom: 20px;
+/* Анимации */
+.sidebar {
+    transition: all 0.3s ease;
 }
 
-.date {
-    color: #7f8c8d;
-    font-style: italic;
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Иконки */
-.fas, .fab {
-    margin-right: 10px;
-    color: #3498db;
-    width: 20px;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #7f8c8d;
-    font-size: 0.9em;
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
