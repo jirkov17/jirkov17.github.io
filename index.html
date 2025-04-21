@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Жирков Владимир - Backend-разработчик</title>
+    <title>Росенко Андрей - Backend-разработчик</title>
     <style>
         /* Основные стили */
         body {
@@ -100,7 +100,7 @@
             font-size: 1.4em;
         }
 
-        .education-item, .course-item {
+        .education-item, .course-item, .project-item {
             margin-bottom: 25px;
         }
 
@@ -139,6 +139,47 @@
         .skill-category h4 {
             margin-top: 0;
             color: #3498db;
+        }
+
+        /* Стили для проектов */
+        .project-item {
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            background-color: #f8fafc;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            background-color: #ebf5fb;
+            transform: translateX(5px);
+        }
+
+        .project-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.2s;
+        }
+
+        .project-link:hover {
+            background-color: #2980b9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .project-link i {
+            margin-right: 5px;
         }
 
         /* Адаптивность */
@@ -201,14 +242,14 @@
 <body>
     <!-- Левая колонка с фото и контактами -->
     <div class="sidebar">
-        <img src="jirkov.jpg" alt="Фото Жирков Владимир" class="photo">
-        <h1>Жирков Владимир</h1>
-        <h2>Backend-разработчик | 19 лет</h2>
+        <img src="your-photo.jpg" alt="Фото Росенко Андрей" class="photo">
+        <h1>Росенко Андрей</h1>
+        <h2>Backend-разработчик | 18 лет</h2>
         
         <div class="contact-info">
             <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург</p>
-            <p><i class="fas fa-phone"></i> <a href="tel:+79932172517">+7 981 765-85-22</a></p>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:jirkoff17@gmail.com">jirkoff17@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+79932172517">+7 993 217-25-17</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:lora.de.mosf@gmail.com">lora.de.mosf@gmail.com</a></p>
             <p><i class="fab fa-github"></i> <a href="https://github.com/jirkov17" target="_blank">github.com/jirkov17</a></p>
         </div>
     </div>
@@ -228,7 +269,54 @@
             </div>
         </section>
         
-               
+        <section id="additional-education">
+            <h3>Дополнительное образование</h3>
+            <div class="course-item">
+                <h4>Зимняя школа «Программирование для RISC-V»</h4>
+                <p class="date">2025</p>
+                <p><strong>Проект:</strong> Запуск и измерение RVV бенчмарков на open-source RISC-V VPU (Ara2, Saturn)</p>
+                <p><strong>Организатор:</strong> YADRO на базе ИТМО</p>
+                <p><strong>Навыки:</strong> RISC-V, Scala, Chisel, Verilog, CLI, Conda, Chipyard, Saturn</p>
+            </div>
+            
+            <h4>Курсы:</h4>
+            <ul>
+                <li>Programming in Go (Matt Holiday) <span class="date">2024</span></li>
+                <li>Django for Everyone (Dr. Chuck, University of Michigan) <span class="date">2024</span></li>
+                <li>PHP (Sololearn) <span class="date">2021</span></li>
+                <li>Операционные системы (Computer Science Center) <span class="date">2021</span></li>
+                <li>Введение в программирование на C++ (Яндекс, НИУ ВШЭ) <span class="date">2020</span></li>
+            </ul>
+        </section>
+        
+        <section id="pet-projects">
+            <h3>Pet-проекты</h3>
+            
+            <div class="project-item">
+                <div class="project-title">Реализация Частотного словаря на AVL-дереве (C++)</div>
+                <p>Проект реализует частотный словарь с использованием AVL-дерева для эффективного хранения и обработки данных.</p>
+                <a href="https://github.com/jirkov17/ProgrammTech/blob/main/main.cpp" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i> Посмотреть на GitHub
+                </a>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">Реализация вычислений различных математических задач (Python)</div>
+                <p>Коллекция программ для решения математических задач, включая численные методы и алгоритмы.</p>
+                <a href="https://github.com/jirkov17/Math_Progs_Repository" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i> Посмотреть на GitHub
+                </a>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-title">Парсер результатов интеллектуальной деятельности из eLIBRARY.RU</div>
+                <p>Скрипт для автоматического сбора данных о научных публикациях с платформы Научной электронной библиотеки.</p>
+                <a href="https://github.com/jirkov17/eLibrary_Parser" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i> Посмотреть на GitHub
+                </a>
+            </div>
+        </section>
+        
         <section id="skills">
             <h3>Профессиональный стек</h3>
             <div class="skills">
@@ -255,7 +343,6 @@
                     <ul>
                         <li>HTML</li>
                         <li>CSS</li>
-                        <li>Figma</li>
                     </ul>
                 </div>
                 
@@ -268,18 +355,16 @@
                 </div>
                 
                 <div class="skill-category">
-                    <h4>Инструменты для проектирования цифровых схем и ПЛИС (FPGA)</h4>
+                    <h4>Инструменты для совместной работы:</h4>
                     <ul>
-                        <li>Quartus</li>
-                        <li>MaxPlus</li>
-                        <li>Active-VHDL</li>
+                        <li>Figma</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
                     <h4>Английский язык:</h4>
                     <ul>
-                        <li>Intermediate (B1)</li>
+                        <li>Upper Intermediate (B2)</li>
                     </ul>
                 </div>
             </div>
@@ -288,9 +373,10 @@
         <section id="additional">
             <h3>Дополнительные сведения</h3>
             <ul>
-                <li>Занимал руководящую должность в учебном коллективе военного училища (организация учебного процесса, управление коллективом)</li>
-                <li>Знание физики (механика, молекулярная физика, динамика, электричество)</li>
-                <li>Знание высшей математики и вычислительных методов</li>
+                <li>Занимал руководящую должность в военном училище (организация учебного процесса, управление коллективом)</li>
+                <li>Хорошо знаю физику (механику, молекулярную динамику, электричество)</li>
+                <li>Отличное знание высшей математики и вычислительных методов</li>
+                <li>Выполнен в качестве итогового проекта курса "Soft Skills: Арт-инноватика"</li>
             </ul>
         </section>
     </div>
