@@ -100,7 +100,7 @@
             font-size: 1.4em;
         }
 
-        .education-item, .course-item, .project-item {
+        .education-item, .course-item, .project-item, .experience-item {
             margin-bottom: 25px;
         }
 
@@ -141,8 +141,8 @@
             color: #3498db;
         }
 
-        /* Стили для проектов */
-        .project-item {
+        /* Стили для проектов и опыта работы */
+        .project-item, .experience-item {
             padding: 15px;
             border-left: 4px solid #3498db;
             background-color: #f8fafc;
@@ -150,12 +150,12 @@
             transition: all 0.3s ease;
         }
 
-        .project-item:hover {
+        .project-item:hover, .experience-item:hover {
             background-color: #ebf5fb;
             transform: translateX(5px);
         }
 
-        .project-title {
+        .project-title, .experience-title {
             font-weight: bold;
             color: #2c3e50;
             margin-bottom: 5px;
@@ -180,6 +180,19 @@
 
         .project-link i {
             margin-right: 5px;
+        }
+
+        /* Структура проекта (дерево каталогов) */
+        .project-structure {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.85em;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+            white-space: pre;
+            overflow-x: auto;
         }
 
         /* Адаптивность */
@@ -244,7 +257,7 @@
     <div class="sidebar">
         <img src="jirkov.jpg" alt="Фото Жирков Владимир" class="photo">
         <h1>Жирков Владимир</h1>
-        <h2>Backend-разработчик | 19 лет</h2>
+        <h2>Backend-разработчик | 21 год</h2>
         
         <div class="contact-info">
             <p><i class="fas fa-map-marker-alt"></i> Санкт-Петербург</p>
@@ -268,9 +281,49 @@
                 <p><strong>Уровень:</strong> бакалавриат</p>
             </div>
         </section>
+
+        <section id="experience">
+            <h3>Опыт работы и практика</h3>
+
+            <div class="experience-item">
+                <div class="experience-title">Стажёр-разработчик — ООО «Цифровые технологии и платформы» (ЦТиП)</div>
+                <p class="date">Август - октябрь 2025 (2 месяца)</p>
+                <ul>
+                    <li>Разработка плагинов для библиотеки стандартных компонентов (cadLIB) и САПР-платформы nanoCAD на C# (.NET, WinForms/WPF)</li>
+                    <li>Разработка макросов для автоматизированного оформления данных в итоговые отчеты Word и Excel</li>
+                    <li>Работа с базами данных MS SQL Server: проектирование схем, написание запросов, интеграция с CAD-приложениями</li>
+                    <li>Применение принципов ООП, SOLID, MVVM; отладка, тестирование и оптимизация кода</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Учебная ознакомительная практика — СПбПУ, ИКНК, ВШПИ</div>
+                <p class="date">20.06.2025 - 17.07.2025</p>
+                <ul>
+                    <li>Изучение и практическое освоение САПР-платформы nanoCAD (Механика, СПДС), её API и особенностей интеграции</li>
+                    <li>Разработка плагина для cadLIB: поиск и фильтрация по базе данных, управление древовидной структурой, расчеты параметров изделий, работа с файловой системой</li>
+                    <li>Разработка плагина для nanoCAD с доступом через панель инструментов и командную строку (NETLOAD, .NET Framework 4.7.2)</li>
+                    <li>Оценка: зачтено</li>
+                </ul>
+            </div>
+        </section>
         
         <section id="pet-projects">
             <h3>Pet-проекты</h3>
+
+            <div class="project-item">
+                <div class="project-title">vidconf — Light-weight платформа для видеоконференций (Python, FastAPI, Next.js)</div>
+                <p>Платформа для видеоконференций с временной авторизацией, инвайт-ссылками, залом ожидания, модерацией и чатом комнаты. Микросервисная архитектура:</p>
+                <div class="project-structure">vidconf/
+├── frontend/          Next.js client
+├── rooms/             FastAPI rooms and auth service
+├── chat/              FastAPI chat service
+├── common/            shared runtime, models, store, events, LiveKit
+└── contracts/redis/   Redis key and storage contracts</div>
+                <a href="https://github.com/jirkov17/vidconf" class="project-link" target="_blank">
+                    <i class="fab fa-github"></i> Посмотреть на GitHub
+                </a>
+            </div>
             
             <div class="project-item">
                 <div class="project-title">Реализация Частотного словаря на AVL-дереве (C++)</div>
@@ -303,10 +356,27 @@
                 <div class="skill-category">
                     <h4>Языки программирования:</h4>
                     <ul>
-                        <li>C++</li>
                         <li>Python</li>
+                        <li>C++</li>
+                        <li>C#</li>
                         <li>Java</li>
                         <li>VHDL</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Backend-фреймворки:</h4>
+                    <ul>
+                        <li>FastAPI</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h4>Базы данных:</h4>
+                    <ul>
+                        <li>PostgreSQL</li>
+                        <li>MS SQL Server</li>
+                        <li>Redis</li>
                     </ul>
                 </div>
                 
